@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { siteConfig } from "./lib/seo";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -73,6 +74,7 @@ export default function RootLayout({
         <div className="min-h-0 flex-1">{children}</div>
         <Footer />
         <Analytics />
+        <SpeedInsights/>
       </body>
     </html>
   );
