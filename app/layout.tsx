@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { siteConfig } from "./lib/seo";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -71,6 +72,7 @@ export default function RootLayout({
         <Navbar />
         <div className="min-h-0 flex-1">{children}</div>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
