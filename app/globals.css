@@ -1,0 +1,145 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --font-satoshi: 'Satoshi', sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-satoshi);
+}
+
+/* --- KLUCZOWE USTAWIENIA BAZOWE --- */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-satoshi) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: default !important; /* Standardowa strzałka na całym body */
+}
+
+/* --- NAPRAWA INTERAKCJI (ŁAPKA VS KRESKA) --- */
+
+/* Wszystko co interaktywne - wymuszamy łapkę (pointer) */
+a, 
+button, 
+select, 
+[role="button"], 
+.cursor-pointer,
+input[type="checkbox"],
+label {
+  cursor: pointer !important;
+  user-select: none; /* Blokuje ten kursor "tekstowy" przy klikaniu */
+}
+
+/* Specyficzne dla Twoich boxów kontaktowych */
+.group, .group * {
+  cursor: pointer !important;
+}
+
+/* TYLKO pola tekstowe mają mieć pionową kreskę (I-beam) */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+textarea {
+  cursor: text !important;
+  user-select: text; /* Tutaj pozwalamy na kursor tekstowy */
+}
+
+/* --- DEFINICJE ANIMACJI (KEYFRAMES) --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* --- PANCERNE KLASY ANIMACJI --- */
+.animate-in {
+  animation-duration: 1000ms;
+  animation-fill-mode: both !important;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in { animation-name: fadeIn; }
+.slide-in-from-top-full { animation-name: slideDown; }
+.slide-in-from-left-20 { animation-name: slideLeft; }
+.slide-in-from-bottom-10, .slide-in-from-bottom-12, .slide-in-from-bottom-5 { 
+  animation-name: slideUp; 
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* --- OPÓŹNIENIA (DELAYS) --- */
+.delay-hero { animation-delay: 300ms !important; }
+.delay-portfolio-head { animation-delay: 600ms !important; }
+.delay-card-1 { animation-delay: 800ms !important; }
+.delay-card-2 { animation-delay: 1000ms !important; }
+.delay-card-3 { animation-delay: 1200ms !important; }
+.delay-footer { animation-delay: 1400ms !important; }
+
+/* --- CUSTOM SCROLLBAR (ULTRA-CLEAN PREMIUM) --- */
+
+/* 1. Szerokość całego obszaru scrolla */
+::-webkit-scrollbar {
+  width: 4px; /* Jeszcze cieńszy dla lepszego efektu */
+}
+
+/* 2. Ukrywamy strzałki na górze i na dole */
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+}
+
+/* 3. Tło scrollbaru (Track) */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* 4. Pasek postępu (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: #7F5AF0;
+  border-radius: 0px; /* Jeśli chcesz idealnie prostą linię, daj 0px. Jeśli lekko obłą, daj 10px */
+}
+
+/* 5. Hover na pasku */
+::-webkit-scrollbar-thumb:hover {
+  background: #9d81f7;
+}
+
+/* Usuwamy wszelkie narożniki (resizer) */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Wsparcie dla Firefoxa (tutaj nie da się ukryć strzałek tak łatwo, ale pasek będzie cienki) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7F5AF0 #000000;
+}
