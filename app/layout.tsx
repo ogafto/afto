@@ -55,8 +55,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl">
-      <body className="relative flex min-h-dvh flex-col overflow-x-auto bg-black text-white antialiased sm:overflow-x-hidden">
-        <div className="pointer-events-none fixed inset-0 -z-10 h-full w-full overflow-hidden">
+      <body className="relative flex min-h-dvh flex-col overflow-x-hidden bg-black text-white antialiased">
+        <div className="pointer-events-none absolute inset-0 -z-10 h-full w-full overflow-hidden sm:fixed">
           <img
             src="/bg-hero.jpg"
             alt=""
@@ -67,7 +67,7 @@ export default function RootLayout({
               backfaceVisibility: "hidden",
             }}
           />
-          <div className="pointer-events-none absolute inset-0 bg-black/10 backdrop-blur-[1px]" />
+          <div className="pointer-events-none absolute inset-0 bg-black/10 sm:backdrop-blur-[1px]" />
         </div>
 
         <Navbar />
