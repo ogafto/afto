@@ -16,6 +16,10 @@
 /* --- KLUCZOWE USTAWIENIA BAZOWE --- */
 body {
   background-color: var(--background);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), url('/bg-hero.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--foreground);
   font-family: var(--font-satoshi) !important;
   -webkit-font-smoothing: antialiased;
