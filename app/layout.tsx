@@ -56,12 +56,16 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className="relative flex min-h-dvh flex-col overflow-x-hidden bg-black text-white antialiased">
-        <div className="pointer-events-none fixed inset-0 -z-10 h-full w-full overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 -z-10 h-full w-full overflow-hidden sm:fixed">
           <img
             src="/bg-hero.jpg"
             alt=""
-            className="h-full w-full select-none object-cover object-center"
-            draggable="false"
+            className="h-full w-full object-cover"
+            style={{
+              transform: "translate3d(0,0,0)",
+              imageRendering: "auto",
+              backfaceVisibility: "hidden",
+            }}
           />
           <div className="pointer-events-none absolute inset-0 bg-black/10 sm:backdrop-blur-[1px]" />
         </div>
