@@ -9,7 +9,7 @@ export default function HomePage() {
 
   return (
     <motion.main
-      className="flex min-h-0 flex-1 flex-col overflow-hidden"
+      className="flex min-h-0 flex-1 flex-col"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.24, ease: "easeOut" }}
