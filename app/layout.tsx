@@ -55,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl">
-      <body className="relative flex min-h-dvh flex-col overflow-x-hidden bg-black text-white antialiased">
+      <body className="relative flex min-h-dvh flex-col overflow-x-auto bg-black text-white antialiased sm:overflow-x-hidden">
         <div className="pointer-events-none fixed inset-0 -z-10 h-full w-full overflow-hidden">
           <img
             src="/bg-hero.jpg"

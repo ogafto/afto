@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <motion.footer
-      className="relative z-50 w-full bg-transparent px-4 py-0 antialiased sm:px-6 lg:px-[240px]"
+      className="relative z-50 mt-12 w-full bg-transparent px-4 py-0 antialiased sm:mt-0 sm:px-6 lg:px-[240px]"
       initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
