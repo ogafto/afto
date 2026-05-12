@@ -20,16 +20,10 @@ body {
   font-family: var(--font-satoshi) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: auto;
+  overflow-x: hidden;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   cursor: default !important; /* Standardowa strzałka na całym body */
-}
-
-@media (min-width: 640px) {
-  body {
-    overflow-x: hidden;
-  }
 }
 
 /* --- NAPRAWA INTERAKCJI (ŁAPKA VS KRESKA) --- */
